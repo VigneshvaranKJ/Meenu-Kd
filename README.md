@@ -1,1 +1,5 @@
-#                                   1st Year Anniversary &#128150
+#                                   1st Year Anniversary <html>
+<body>
+<span style='font-size:25px;'>&#128150;</span>
+</body>
+</html>
