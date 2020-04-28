@@ -1,2 +1,5 @@
-# 1st Year Anniversary :P
-<Style type='text/css' >body{background-color:rgb(0,0,0);background-image:url(http://www.zingerbugimages.com/backgrounds/teal_starry_sky_glitter_background_seamless.gif);background-position:top left;background-repeat:repeat;background-attachment:fixed;}</Style>
+# 1st Year Anniversary<html><style>body{font-size: 20px;}</style><body><span style='font-size:25px;'>&#128150;</span></body></html>
+<div class="pyro">
+  <div class="before"></div>
+  <div class="after"></div>
+</div>
