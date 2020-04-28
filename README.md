@@ -1,5 +1,6 @@
 #    730 days to go ma(dam).. ... .<span style='font-size:25px;'>&#128541;</span><span style='font-size:25px;'>&#128150;</span>
-body {
+<html>
+  body {
   margin: 0;
   padding: 0;
   background: #000;
@@ -184,5 +185,6 @@ body {
   80%, 99.9% {
     margin-top: 30%;
     margin-left: 80%; } }
+    </html>
 
 
