@@ -1,190 +1,245 @@
 #    730 days to go ma(dam).. ... .<span style='font-size:25px;'>&#128541;</span><span style='font-size:25px;'>&#128150;</span>
-<html>
-  body {
-  margin: 0;
-  padding: 0;
-  background: #000;
-  overflow: hidden; }
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Fireworks.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style> 
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
-.pyro > .before, .pyro > .after {
-  position: absolute;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  box-shadow: -120px -218.66667px blue, 248px -16.66667px #00ff84, 190px 16.33333px #002bff, -113px -308.66667px #ff009d, -109px -287.66667px #ffb300, -50px -313.66667px #ff006e, 226px -31.66667px #ff4000, 180px -351.66667px #ff00d0, -12px -338.66667px #00f6ff, 220px -388.66667px #99ff00, -69px -27.66667px #ff0400, -111px -339.66667px #6200ff, 155px -237.66667px #00ddff, -152px -380.66667px #00ffd0, -50px -37.66667px #00ffdd, -95px -175.66667px #a6ff00, -88px 10.33333px #0d00ff, 112px -309.66667px #005eff, 69px -415.66667px #ff00a6, 168px -100.66667px #ff004c, -244px 24.33333px #ff6600, 97px -325.66667px #ff0066, -211px -182.66667px #00ffa2, 236px -126.66667px #b700ff, 140px -196.66667px #9000ff, 125px -175.66667px #00bbff, 118px -381.66667px #ff002f, 144px -111.66667px #ffae00, 36px -78.66667px #f600ff, -63px -196.66667px #c800ff, -218px -227.66667px #d4ff00, -134px -377.66667px #ea00ff, -36px -412.66667px #ff00d4, 209px -106.66667px #00fff2, 91px -278.66667px #000dff, -22px -191.66667px #9dff00, 139px -392.66667px #a6ff00, 56px -2.66667px #0099ff, -156px -276.66667px #ea00ff, -163px -233.66667px #00fffb, -238px -346.66667px #00ff73, 62px -363.66667px #0088ff, 244px -170.66667px #0062ff, 224px -142.66667px #b300ff, 141px -208.66667px #9000ff, 211px -285.66667px #ff6600, 181px -128.66667px #1e00ff, 90px -123.66667px #c800ff, 189px 70.33333px #00ffc8, -18px -383.66667px #00ff33, 100px -6.66667px #ff008c;
-  -moz-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
-  -webkit-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
-  -o-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
-  -ms-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
-  animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards; }
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-.pyro > .after {
-  -moz-animation-delay: 1.25s, 1.25s, 1.25s;
-  -webkit-animation-delay: 1.25s, 1.25s, 1.25s;
-  -o-animation-delay: 1.25s, 1.25s, 1.25s;
-  -ms-animation-delay: 1.25s, 1.25s, 1.25s;
-  animation-delay: 1.25s, 1.25s, 1.25s;
-  -moz-animation-duration: 1.25s, 1.25s, 6.25s;
-  -webkit-animation-duration: 1.25s, 1.25s, 6.25s;
-  -o-animation-duration: 1.25s, 1.25s, 6.25s;
-  -ms-animation-duration: 1.25s, 1.25s, 6.25s;
-  animation-duration: 1.25s, 1.25s, 6.25s; }
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://twitter.github.com/bootstrap/assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
 
-@-webkit-keyframes bang {
-  from {
-    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
-@-moz-keyframes bang {
-  from {
-    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
-@-o-keyframes bang {
-  from {
-    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
-@-ms-keyframes bang {
-  from {
-    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
-@keyframes bang {
-  from {
-    box-shadow: 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white, 0 0 white; } }
-@-webkit-keyframes gravity {
-  to {
-    transform: translateY(200px);
-    -moz-transform: translateY(200px);
-    -webkit-transform: translateY(200px);
-    -o-transform: translateY(200px);
-    -ms-transform: translateY(200px);
-    opacity: 0; } }
-@-moz-keyframes gravity {
-  to {
-    transform: translateY(200px);
-    -moz-transform: translateY(200px);
-    -webkit-transform: translateY(200px);
-    -o-transform: translateY(200px);
-    -ms-transform: translateY(200px);
-    opacity: 0; } }
-@-o-keyframes gravity {
-  to {
-    transform: translateY(200px);
-    -moz-transform: translateY(200px);
-    -webkit-transform: translateY(200px);
-    -o-transform: translateY(200px);
-    -ms-transform: translateY(200px);
-    opacity: 0; } }
-@-ms-keyframes gravity {
-  to {
-    transform: translateY(200px);
-    -moz-transform: translateY(200px);
-    -webkit-transform: translateY(200px);
-    -o-transform: translateY(200px);
-    -ms-transform: translateY(200px);
-    opacity: 0; } }
-@keyframes gravity {
-  to {
-    transform: translateY(200px);
-    -moz-transform: translateY(200px);
-    -webkit-transform: translateY(200px);
-    -o-transform: translateY(200px);
-    -ms-transform: translateY(200px);
-    opacity: 0; } }
-@-webkit-keyframes position {
-  0%, 19.9% {
-    margin-top: 10%;
-    margin-left: 40%; }
+  <body>
 
-  20%, 39.9% {
-    margin-top: 40%;
-    margin-left: 30%; }
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Fireworks.js</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a href="https://github.com/jeromeetienne/fireworks.js">Github</a></li>
+              <li><a href="#examples">Examples</a></li>
+              <li><a href="https://twitter.com/#!/jerome_etienne">Twitter</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
-  40%, 59.9% {
-    margin-top: 20%;
-    margin-left: 70%; }
+    <div class="container">
+	<!-- Main hero unit for a primary marketing message or call to action -->
+	<div class="hero-unit">
+		<h1>Fireworks.js</h1>
+		<p>Fireworks is a particle engine based on a very slim core and rich set of flexible plugins.
+		You can easily make your own plugins to fit your own needs and go wild on creativity.</p>
+		<p><a class="btn btn-primary btn-large" href="https://github.com/jeromeetienne/fireworks.js">Learn more &raquo;</a></p>
+	</div>
+	<div class="page-header" id="examples">
+		<h1>Examples</h1>
+	</div>
+	<div class="row">
+		<div class='span3'>
+			<div class="thumbnail">
+				<div class="caption">
+					<h5>Canvas renderer</h5>
+					<p>
+						This is a very basic example with a rendering
+						in Canvas2D
+					</p>
+					<p>
+						<a href="examples/renderer_canvas/canvas_example.html" class="btn" target='_blank'>Learn more &raquo;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class='span3'>
+			<div class="thumbnail">
+				<div class="caption">
+					<h5>Canvas renderer</h5>
+					<p>
+						This is a explosion animation with a spritesheet and a rendering
+						in Canvas2D
+					</p>
+					<p>
+						<a href="examples/renderer_canvas/canvas_explosion.html" class="btn" target='_blank'>Learn more &raquo;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class='span3'>
+			<div class="thumbnail">
+				<div class="caption">
+					<h5>three.js renderer</h5>
+					<p>
+						This is a very basic example with a rendering
+						in three.js particle system
+					</p>
+					<p>
+						<a href="examples/renderer_threejs/tqueryparticlesystem.html" class="btn" target='_blank'>Learn more &raquo;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class='span3'>
+			<div class="thumbnail">
+				<div class="caption">
+					<h5>three.js renderer</h5>
+					<p>
+						This is a very basic example with a rendering
+						in three.js object3D
+					</p>
+					<p>
+						<a href="examples/renderer_threejs/tqueryobject3d.html" class="btn" target='_blank'>Learn more &raquo;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class='span3'>
+			<div class="thumbnail">
+				<div class="caption">
+					<h5>Flame thrower Canvas</h5>
+					<p>
+						This is an attempts to reproduce
+						tremulous flamethrower in Canvas2D
+					</p>
+					<p>
+						<a href="examples/flamethrower/canvas_flamethrower.html" class="btn" target='_blank'>Learn more &raquo;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class='span3'>
+			<div class="thumbnail">
+				<div class="caption">
+					<h5>Flame thrower webgl</h5>
+					<p>
+						This is an attempts to reproduce
+						tremulous flamethrower in webgl
+					</p>
+					<p>
+						<a href="examples/flamethrower/webgl_flamethrower.html" class="btn" target='_blank'>Learn more &raquo;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class='span3'>
+			<div class="thumbnail">
+				<div class="caption">
+					<h5>Single Flame webgl</h5>
+					<p>
+						It shows how to code a single flame emitter
+					</p>
+					<p>
+						<a href="examples/flame/flame.html" class="btn" target='_blank'>Learn more &raquo;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class='span3'>
+			<div class="thumbnail">
+				<div class="caption">
+					<h5>Black Smoke webgl</h5>
+					<p>
+						It shows how to code a black smoke emitter
+					</p>
+					<p>
+						<a href="examples/smoke/webgl_blacksmoke.html" class="btn" target='_blank'>Learn more &raquo;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class='span3'>
+			<div class="thumbnail">
+				<div class="caption">
+					<h5>Space Portal webgl</h5>
+					<p>
+						It shows how to code
+						Space Portal emitter
+					</p>
+					<p>
+						<a href="examples/spaceportal/spaceportal.html" class="btn" target='_blank'>Learn more &raquo;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class='span3'>
+			<div class="thumbnail">
+				<div class="caption">
+					<h5>Cloud with Sprite</h5>
+					<p>
+						This is a copy of the <a href="http://mrdoob.com/lab/javascript/webgl/clouds/">cloud demo</a>
+						from
+						<a href="http://mrdoob.com/">mrdoob</a>.
+						It shows how to code the effect with fireworks.js
+					</p>
+					<p>
+						<a href="examples/cloud/cloud_uniform.html" class="btn" target='_blank'>Learn more &raquo;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class='span3'>
+			<div class="thumbnail">
+				<div class="caption">
+					<h5>Cloud with Sprite</h5>
+					<p>
+						This is a copy of the <a href="http://mrdoob.com/lab/javascript/webgl/clouds/">cloud demo</a>
+						from
+						<a href="http://mrdoob.com/">mrdoob</a>.
+						It shows how to code the effect with fireworks.js
+					</p>
+					<p>
+						<a href="examples/cloud/cloud_cluster.html" class="btn" target='_blank'>Learn more &raquo;</a>
+					</p>
+				</div>
+			</div>
+		</div>
+    </div> <!-- /container -->
 
-  60%, 79.9% {
-    margin-top: 30%;
-    margin-left: 20%; }
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-transition.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-alert.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tab.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-popover.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-button.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-carousel.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script>
 
-  80%, 99.9% {
-    margin-top: 30%;
-    margin-left: 80%; } }
-@-moz-keyframes position {
-  0%, 19.9% {
-    margin-top: 10%;
-    margin-left: 40%; }
-
-  20%, 39.9% {
-    margin-top: 40%;
-    margin-left: 30%; }
-
-  40%, 59.9% {
-    margin-top: 20%;
-    margin-left: 70%; }
-
-  60%, 79.9% {
-    margin-top: 30%;
-    margin-left: 20%; }
-
-  80%, 99.9% {
-    margin-top: 30%;
-    margin-left: 80%; } }
-@-o-keyframes position {
-  0%, 19.9% {
-    margin-top: 10%;
-    margin-left: 40%; }
-
-  20%, 39.9% {
-    margin-top: 40%;
-    margin-left: 30%; }
-
-  40%, 59.9% {
-    margin-top: 20%;
-    margin-left: 70%; }
-
-  60%, 79.9% {
-    margin-top: 30%;
-    margin-left: 20%; }
-
-  80%, 99.9% {
-    margin-top: 30%;
-    margin-left: 80%; } }
-@-ms-keyframes position {
-  0%, 19.9% {
-    margin-top: 10%;
-    margin-left: 40%; }
-
-  20%, 39.9% {
-    margin-top: 40%;
-    margin-left: 30%; }
-
-  40%, 59.9% {
-    margin-top: 20%;
-    margin-left: 70%; }
-
-  60%, 79.9% {
-    margin-top: 30%;
-    margin-left: 20%; }
-
-  80%, 99.9% {
-    margin-top: 30%;
-    margin-left: 80%; } }
-@keyframes position {
-  0%, 19.9% {
-    margin-top: 10%;
-    margin-left: 40%; }
-
-  20%, 39.9% {
-    margin-top: 40%;
-    margin-left: 30%; }
-
-  40%, 59.9% {
-    margin-top: 20%;
-    margin-left: 70%; }
-
-  60%, 79.9% {
-    margin-top: 30%;
-    margin-left: 20%; }
-
-  80%, 99.9% {
-    margin-top: 30%;
-    margin-left: 80%; } }
-    </html>
-
-
+	<!-- Github ribbon -->
+	<a href="https://github.com/jeromeetienne/fireworks.js/" target="_blank"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 9999;"
+	    src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+	</a>
+  </body>
+</html>
