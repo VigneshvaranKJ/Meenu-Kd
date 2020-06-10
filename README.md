@@ -3,4 +3,4 @@
 
 ## with Love 
 
-# Your Idiot :stuck_out_tongue_winking_eye:
+# Your Idiot 😜 
